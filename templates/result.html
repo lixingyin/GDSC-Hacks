@@ -3,14 +3,38 @@
 {% block title %}TurboText{% endblock %}
 
 {% block content %}
-
-<h1>Submitted Words</h1>
-    <ul>
-        {% for word in words %}
-            <li>{{ word }}</li>
-        {% endfor %}
+<div class="container mt-4">
+    <h1 class="text-center">Submitted Words</h1>
+    <ul class="list-group" id="wordList">
     </ul>
+</div>
 
+<script>
+    var words = {{ words | tojson }};
+    var index = 0;
+    var displayText = document.getElementById("wordList");
+
+    function displayWords() {
+        if (index < words.length) {
+            var listItem = document.createElement("li");
+            listItem.classList.add("list-group-item");
+            listItem.textContent = words[index];
+            displayText.appendChild(listItem);
+            index++;
+
+            setTimeout(function() {
+                displayText.removeChild(listItem);
+            }, 1000);
+
+            setTimeout(displayWords, 1000);
+        }
+        else {
+            setTimeout(function() {
+                window.location.href = "/";
+            }, 1000);
+        }
+    }
+
+    displayWords();
+</script>
 {% endblock %}
-
-
