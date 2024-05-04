@@ -13,8 +13,8 @@ def index():
 def submit():
     if request.method == 'POST':
         text = request.form['text']
-        words = text.split()  # Split the text into words
-        print("Words:", words)  # Debugging line
+        words = text.split()
+        print("Words:", words)  
         return render_template('result.html', words=words)
     return render_template('result.html', words=[])
 
