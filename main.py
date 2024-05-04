@@ -1,4 +1,6 @@
 from flask import Flask, redirect, url_for, render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField
 
 app = Flask(__name__)
 
