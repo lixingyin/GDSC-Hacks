@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Result</title>
-</head>
-<body>
-    <h1>Submitted Words</h1>
+{% extends "frame.html" %}
+
+{% block title %}TurboText{% endblock %}
+
+{% block content %}
+
+<h1>Submitted Words</h1>
     <ul>
         {% for word in words %}
             <li>{{ word }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+
+{% endblock %}
+
+

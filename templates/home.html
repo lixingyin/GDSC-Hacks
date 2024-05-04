@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Flask App</title>
-</head>
-<body>
-    <h1>Hello, Li Xing!</h1>
-    <h1>Enter your text to be read!</h1>
+{% extends "frame.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <style>
+        .margin-top-100 {
+            margin-top: 100px;
+        }
+        .margin-bottom-100 {
+            margin-bottom: 100px;
+        }
+    </style>
+    <h1 class="text-center text-blue margin-top-100 margin-bottom-100">Welcome to a new way to learn information faster and more efficient. This is a website created by Allan Joe Geroge and Lixing Yin</h1>
+
+    <h2>Enter your subject and text to be read!</h2>
     <form action="/submit" method="post">
-        <input type="text" name="text" placeholder="Enter text here">
-        <input type="submit" value="Submit">
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject here">
+        </div>
+        <div class="form-group">
+            <label for="text">Text:</label>
+            <textarea class="form-control" id="text" name="text" rows="5" placeholder="Enter text here"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
     </form>
-</body>
-</html>
+
+</div>
+{% endblock %}

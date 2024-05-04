@@ -2,6 +2,7 @@ from flask import Flask
 from flask import redirect, url_for, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import StringField
+import time
 
 app = Flask(__name__)
 
@@ -20,4 +21,5 @@ def submit():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
 # flask --app main run
