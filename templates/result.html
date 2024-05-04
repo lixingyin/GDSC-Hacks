@@ -4,7 +4,11 @@
     <title>Result</title>
 </head>
 <body>
-    <h1>Submitted Text</h1>
-    <p>{{ text }}</p>
+    <h1>Submitted Words</h1>
+    <ul>
+        {% for word in words %}
+            <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

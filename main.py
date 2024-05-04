@@ -9,11 +9,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/submit', methods = ["POST"])
+@app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
         text = request.form['text']
-        return render_template('result.html', text=text)
+        words = text.split()  # Split the text into words
+        print("Words:", words)  # Debugging line
+        return render_template('result.html', words=words)
+    return render_template('result.html', words=[])
 
 
 # flask --app main run
