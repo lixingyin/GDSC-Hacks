@@ -18,5 +18,6 @@ def submit():
         return render_template('result.html', words=words)
     return render_template('result.html', words=[])
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
 # flask --app main run
