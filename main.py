@@ -1,4 +1,7 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask
+from flask import redirect, url_for, render_template, request
+from flask_wtf import FlaskForm
+from wtforms import StringField
 
 app = Flask(__name__)
 
@@ -6,11 +9,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/hello')
-def hello():
-    return 'Hello, World'
+@app.route('/submit', methods = ["POST"])
+def submit():
+    if request.method == 'POST':
+        text = request.form['text']
+        return render_template('result.html', text=text)
 
-if __name__ == '__main__':
-    app.run(debug=False)
 
 # flask --app main run
