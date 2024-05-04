@@ -15,5 +15,6 @@ def submit():
         text = request.form['text']
         return render_template('result.html', text=text)
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
 # flask --app main run
