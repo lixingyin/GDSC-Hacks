@@ -24,10 +24,11 @@
 
             setTimeout(function() {
                 displayText.removeChild(listItem);
-            }, (parseInt({{text2}})*30/60));
+            }, (parseInt(60000/{{text2}})));
 
-            setTimeout(displayWords, (parseInt({{text2}})*30/60));
+            setTimeout(displayWords, (60000/parseInt({{text2}})));
         }
+        
         else {
             setTimeout(function() {
                 window.location.href = "/";
