@@ -13,11 +13,14 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        text = request.form['text']
-        words = text.split()
-        print("Words:", words)  
-        return render_template('result.html', words=words)
-    return render_template('result.html', words=[])
+        text = request.form['subject']
+        text1 = request.form['text']
+        text2 = request.form['time']        
+
+        allWords = text1.split()
+        print("Words:", allWords)  
+        return render_template('result.html', allWords=allWords, text=text, text2=text2)
+    return render_template('result.html', allWords=[], text=text, text2=text2)
 
 if __name__ == '__main__':
     app.run(debug=True)

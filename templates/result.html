@@ -10,7 +10,7 @@
 </div>
 
 <script>
-    var words = {{ words | tojson }};
+    var words = {{ allWords | tojson }};
     var index = 0;
     var displayText = document.getElementById("wordList");
 
@@ -24,14 +24,14 @@
 
             setTimeout(function() {
                 displayText.removeChild(listItem);
-            }, 1000);
+            }, (parseInt({{text2}})*30/60));
 
-            setTimeout(displayWords, 1000);
+            setTimeout(displayWords, (parseInt({{text2}})*30/60));
         }
         else {
             setTimeout(function() {
                 window.location.href = "/";
-            }, 1000);
+            }, 2000);
         }
     }
 
