@@ -10,6 +10,14 @@ app = Flask(__name__)
 def index():
     return render_template("home.html")
 
+@app.route('/instructions')
+def howto():
+    return render_template("instructions.html")
+
+@app.route('/settings')
+def setup():
+    return render_template("settings.html")
+
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':

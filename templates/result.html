@@ -3,11 +3,13 @@
 {% block title %}TurboText{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1 class="text-center">Submitted Words</h1>
-    <ul class="list-group" id="wordList">
-    </ul>
-</div>
+<h1 class="text-center">Submitted Words</h1>
+<ul id="wordList" class="list-unstyled">
+    {% for word in words %}
+        <li>{{ word }}</li>
+    {% endfor %}
+</ul>
+
 
 <script>
     var words = {{ allWords | tojson }};
