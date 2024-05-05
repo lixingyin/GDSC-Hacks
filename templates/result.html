@@ -3,7 +3,7 @@
 {% block title %}TurboText{% endblock %}
 
 {% block content %}
-<h1 class="text-center">Submitted Words</h1>
+<h1 class="text-center">{{text}}</h1>
 <ul id="wordList" class="list-unstyled">
     {% for word in words %}
         <li>{{ word }}</li>
@@ -33,7 +33,7 @@
         
         else {
             setTimeout(function() {
-                window.location.href = "/";
+                window.location.href = "/summarize";
             }, 2000);
         }
     }

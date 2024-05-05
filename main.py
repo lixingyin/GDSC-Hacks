@@ -18,6 +18,22 @@ def howto():
 def setup():
     return render_template("settings.html")
 
+@app.route("/summarize", methods=["POST"])
+def summarize():
+    text = request.args.get('all_words')
+    topic = request.args.get('text')
+
+    summary = generate_summary(text, topic)
+
+    return render_template("summary.html", text=text, topic=topic)
+
+def generate_summary(text, topic):
+    # Use your preferred method to access Gemini
+    # and generate the summary
+    pass
+
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
